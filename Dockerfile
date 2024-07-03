@@ -35,6 +35,7 @@ RUN su - build -c "git clone https://aur.archlinux.org/pikaur.git /tmp/pikaur" &
 
 # Auto add PGP keys for users
 RUN mkdir -p /etc/gnupg/ && echo -e "keyserver-options auto-key-retrieve" >> /etc/gnupg/gpg.conf
+RUN gpg --refresh-keys
 
 # Add a fake systemd-run script to workaround pikaur requirement.
 RUN echo -e "#!/bin/bash\nif [[ \"$1\" == \"--version\" ]]; then echo 'fake 244 version'; fi\nmkdir -p /var/cache/pikaur\n" >> /usr/bin/systemd-run && \
