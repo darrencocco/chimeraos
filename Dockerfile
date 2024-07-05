@@ -1,4 +1,4 @@
-FROM archlinux:base-devel-20231112.0.191179
+FROM archlinux:base-devel-20240101.0.204074
 LABEL contributor="shadowapex@gmail.com"
 COPY rootfs/etc/pacman.conf /etc/pacman.conf
 COPY manifest /manifest
@@ -29,13 +29,11 @@ RUN echo -e "keyserver-options auto-key-retrieve" >> /etc/pacman.d/gnupg/gpg.con
     echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     useradd build -G wheel -m
 RUN su - build -c "git clone https://aur.archlinux.org/pikaur.git /tmp/pikaur" && \
-    su - build -c "cd /tmp/pikaur && git checkout 262ced7bb5097dc63e5a63c349bdb15857944912" && \
-    su - build -c "cd /tmp/pikaur && makepkg -fsr" && \
+    su - build -c "cd /tmp/pikaur && makepkg -f" && \
     pacman --noconfirm -U /tmp/pikaur/pikaur-*.pkg.tar.zst
 
 # Auto add PGP keys for users
 RUN mkdir -p /etc/gnupg/ && echo -e "keyserver-options auto-key-retrieve" >> /etc/gnupg/gpg.conf
-RUN gpg --refresh-keys
 
 # Add a fake systemd-run script to workaround pikaur requirement.
 RUN echo -e "#!/bin/bash\nif [[ \"$1\" == \"--version\" ]]; then echo 'fake 244 version'; fi\nmkdir -p /var/cache/pikaur\n" >> /usr/bin/systemd-run && \
