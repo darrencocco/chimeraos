@@ -16,9 +16,6 @@
 [submodule "aur-pkgs/frzr"]
 	path = aur-pkgs/frzr
 	url = https://aur.archlinux.org/frzr.git
-[submodule "aur-pkgs/gamescope-plus"]
-	path = aur-pkgs/gamescope-plus
-	url = https://aur.archlinux.org/gamescope-plus.git
 [submodule "aur-pkgs/handygccs-git"]
 	path = aur-pkgs/handygccs-git
 	url = https://aur.archlinux.org/handygccs-git.git
