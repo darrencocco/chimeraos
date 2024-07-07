@@ -19,9 +19,6 @@
 [submodule "aur-pkgs/handygccs-git"]
 	path = aur-pkgs/handygccs-git
 	url = https://aur.archlinux.org/handygccs-git.git
-[submodule "aur-pkgs/legendary"]
-	path = aur-pkgs/legendary
-	url = https://aur.archlinux.org/legendary.git
 [submodule "aur-pkgs/lib32-gamescope-plus"]
 	path = aur-pkgs/lib32-gamescope-plus
 	url = https://aur.archlinux.org/lib32-gamescope-plus.git
@@ -43,9 +40,6 @@
 [submodule "aur-pkgs/powerstation-bin"]
 	path = aur-pkgs/powerstation-bin
 	url = https://aur.archlinux.org/powerstation-bin.git
-[submodule "aur-pkgs/python-vdf"]
-	path = aur-pkgs/python-vdf
-	url = https://aur.archlinux.org/python-vdf.git
 [submodule "aur-pkgs/r8152-dkms"]
 	path = aur-pkgs/r8152-dkms
 	url = https://aur.archlinux.org/r8152-dkms.git
